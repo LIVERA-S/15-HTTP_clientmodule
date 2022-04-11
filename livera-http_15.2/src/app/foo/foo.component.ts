@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Foo } from './foo.model';
 
 @Component({
   selector: 'app-foo',
@@ -10,15 +11,18 @@ import { Observable } from 'rxjs';
 export class FooComponent {
   data: Object = undefined!;
   loading: boolean = undefined!;
-  o :Observable<Object> = undefined!;
-  
+  o :Observable<Object> = undefined!
+  fooData! : Foo[];
+  oFoo! : Observable<Foo[]>;;
   constructor(public http: HttpClient) {}
+
   makeRequest(): void {
     console.log("here");
     this.loading = true;
     this.o = this.http.get('https://jsonplaceholder.typicode.com/posts/1');
     this.o.subscribe(this.getData);
   }
+
   getData = (d : Object) =>
   {
     this.data = new Object(d);
@@ -51,5 +55,11 @@ export class FooComponent {
           this.loading = false;
         });
       }
+      makeTypedRequest() : void
+      {  
+        //oFoo : Observable<Foo[]>; va dichiarato tra gli attributi della classe
+        this.oFoo = this.http.get<Foo[]>('https://jsonplaceholder.typicode.com/posts');
+        this.oFoo.subscribe(data => {this.fooData = data;});
+      }  
 
 }
