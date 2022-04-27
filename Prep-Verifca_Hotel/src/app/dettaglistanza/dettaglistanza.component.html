@@ -1,9 +1,1 @@
-<p>Eccco le prenotazioone delle stanze</p>
-<div *ngFor="let vet of listaPreno">
-    {{vet.form}} <br>
-    {{vet.to}} <br>
-    {{vet.name}} <br>
-    {{vet.surname}} <br>
-    <button (click)="mostraDati(vet.room)">Mostra dettagli stanza</button>
-    <hr>
-</div>
+{{room | json}}

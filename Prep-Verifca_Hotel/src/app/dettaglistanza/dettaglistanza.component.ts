@@ -10,10 +10,7 @@ import { Room } from '../rooms.model';
 export class DettaglistanzaComponent implements OnInit {
 
   constructor() { }
-  @Input() listaPreno :Booking[] = undefined!;
+  @Input() room : Room = undefined!;
   ngOnInit(): void {
-  }
-  mostraDati(room:Room){
-    console.log(room);
   }
 }

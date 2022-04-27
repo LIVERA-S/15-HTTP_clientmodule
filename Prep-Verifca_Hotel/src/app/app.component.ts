@@ -13,6 +13,7 @@ export class AppComponent implements OnInit{
   title = 'Prep-Verifca_Hotel';
   obsRooms: Observable<Booking[]> | undefined
   data: Booking[] = undefined!;
+  selectedRoom: Room = new Room(); 
   constructor(private http: HttpClient){
     
   }
