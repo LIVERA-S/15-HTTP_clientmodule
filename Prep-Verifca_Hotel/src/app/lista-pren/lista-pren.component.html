@@ -1,10 +1,22 @@
-<p>Eccco le prenotazioone delle stanze</p>
-<div *ngFor="let vet of listaPreno">
-    {{vet.form}} <br>
-    {{vet.to}} <br>
-    {{vet.name}} <br>
-    {{vet.surname}} <br>
-    <button (click)="mostraDati(vet.room)">Mostra dettagli stanza</button>
-    <hr>
-</div>
+<style>
+    .content {
+      display: flex;
+      padding: 0 8px;
+      max-width: 1500px;
+      flex-direction: column;
+      align-items: center;
+    }
+</style>
 
+<div class="content" role="main">
+    <div class="container" >
+        <div *ngFor="let vet of listaPreno" class="card-body  col-8 col-sm-3 ciao" >
+            <span style="font-weight: bold;">From: </span>{{vet.from}}<br>
+            <span style="font-weight: bold;">TO: </span>{{vet.to}} <br>
+            <span style="font-weight: bold;">Name: </span>{{vet.name}} <br>
+            <span style="font-weight: bold;">Surname: </span>{{vet.surname}} <br>
+            <button (click)="mostraDati(vet.room)" class="button">Mostra dettagli stanza</button>
+            <hr>
+        </div>
+    </div>
+</div>

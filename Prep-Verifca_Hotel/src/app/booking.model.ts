@@ -1,7 +1,7 @@
 import { Room } from "./rooms.model";
 export class Booking{
 
-    form: string = "";
+    from: string = "";
     to : string = "";
     name:string = "";
     surname:string = "";
