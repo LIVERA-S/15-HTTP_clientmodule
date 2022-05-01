@@ -16,3 +16,11 @@ color: white;
     flex-direction: column;
     align-items: center;
 }
+
+.white{
+    background-color: white;
+}
+
+.yellow{
+    background-color: yellow;
+}
