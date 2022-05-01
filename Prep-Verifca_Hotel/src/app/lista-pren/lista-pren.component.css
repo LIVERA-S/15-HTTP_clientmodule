@@ -8,3 +8,11 @@ border: 1px solid #555555;
 background-color: #555555;
 color: white;
 }
+
+.content {
+    display: flex;
+    padding: 0 0px;
+    max-width: 1500px;
+    flex-direction: column;
+    align-items: center;
+}
