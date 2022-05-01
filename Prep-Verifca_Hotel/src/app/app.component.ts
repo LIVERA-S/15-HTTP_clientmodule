@@ -14,6 +14,7 @@ export class AppComponent implements OnInit{
   obsRooms: Observable<Booking[]> | undefined
   data: Booking[] = undefined!;
   selectedRoom: Room = new Room(); 
+  
   constructor(private http: HttpClient){
     
   }
