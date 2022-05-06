@@ -1,17 +1,19 @@
-<div class="container mt-1" >
-    <div class="row" style="text-align: justify;">
-      <div class="col" >
-        <ul *ngFor="let vet of listaPreno">
-            <h4 ><span style="font-weight: bold;">From: </span>{{vet.from}}<br></h4>
-            <span style="font-weight: bold;">TO: </span>{{vet.to}} <br>
-            <span style="font-weight: bold;">Name: </span>{{vet.name}} <br>
-            <span style="font-weight: bold;">Surname: </span>{{vet.surname}} <br><br>
-            <button (click)="mostraDati(vet.room)" class="button">Mostra dettagli stanza</button>&nbsp;
-            <button [ngClass]="cssColor" (click)="makeFavorite()" style="margin-left: 10px;">Sospendi</button>
-            <hr>
-        </ul>
-      </div>
-      <div class="col">
-      </div>
+<div class="container mt-1">
+  <div class="row" style="text-align: justify;">
+    <div class="col">
+      <ul *ngFor="let vet of listaPreno">
+        <div [ngClass]="vet.cssColor">
+          <h4 ><span style="font-weight: bold;">From: </span>{{vet.from}}<br></h4>
+          <span style="font-weight: bold;">TO: </span>{{vet.to}} <br>
+          <span style="font-weight: bold;">Name: </span>{{vet.name}} <br>
+          <span style="font-weight: bold;">Surname: </span>{{vet.surname}} <br><br>
+          <button (click)="mostraDati(vet.room)" class="button">Mostra dettagli stanza</button>&nbsp;
+          <button (click)="makeFavorite(vet)" style="margin-left: 10px;" class="button">Sospendi</button>
+        </div>
+        <hr>
+      </ul>
     </div>
+    <div class="col">
+    </div>
+  </div>
 </div>

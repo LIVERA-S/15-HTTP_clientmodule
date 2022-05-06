@@ -1,4 +1,4 @@
-import { Component, OnInit,Input, HostBinding } from '@angular/core';
+import { Component, OnInit, Input, HostBinding } from '@angular/core';
 import { Booking } from '../booking.model';
 import { Room } from '../rooms.model';
 @Component({
@@ -7,25 +7,27 @@ import { Room } from '../rooms.model';
   styleUrls: ['./lista-pren.component.css']
 })
 export class ListaPrenComponent implements OnInit {
-  @Input() listaPreno :Booking[] = undefined!;
+  @Input() listaPreno: Booking[] = undefined!;
   @Input() room: Room = undefined!;
   @HostBinding('class') cssColor = 'white';
 
   constructor() { }
-  
+
   ngOnInit(): void {
   }
-  mostraDati(room:Room){
+  mostraDati(room: Room) {
     this.room.id = room.id;
     this.room.name = room.name;
     this.room.num_D_bed = room.num_D_bed;
     this.room.num_S_bed = room.num_S_bed;
   }
-  makeFavorite(){
-    if(this.cssColor == 'white')
-      this.cssColor = 'yellow';
+  makeFavorite(vet: Booking) {
+    if (vet.cssColor == 'white')
+      vet.cssColor = 'yellow';
     else
-      this.cssColor = 'white';
+      vet.cssColor = 'white';
+
+    this.cssColor = vet.cssColor;
   }
 
 }

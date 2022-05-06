@@ -5,4 +5,11 @@ export class Booking{
     name:string = "";
     surname:string = "";
     room: Room = undefined!;
+    cssColor = 'white';   
+    makeFavorite(){
+        if(this.cssColor == 'white')
+          this.cssColor = 'yellow';
+        else
+          this.cssColor = 'white';
+      }
 }
